@@ -1,8 +1,4 @@
 import os
-opcionA = ''
-opcionB = ''
-opcionC = ''
-opcionD = ''
 
 print('\nA = Usuario \t \t B = Configuracion \t \tC = Idioma \t \tD = Ayuda ')
 
