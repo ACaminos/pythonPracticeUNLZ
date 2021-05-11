@@ -12,16 +12,36 @@ ventana.geometry('600x400')
 
 def ingreso():
     num = texto.get()
-    lista.append(str(num))
+    lista.append(int(num))
     texto.delete(0,30)
 
 def modificar():
     MessageBox.showinfo("Usted ingreso los numeros: ",lista)
+    duplicados()
     lista.sort()
     MessageBox.showinfo('Numeros ordenados: ',lista)
+    duplicados()
+    MessageBox.showinfo('Numeros sin repetir: ',lista)
+    impares()
+    MessageBox.showinfo('Numeros sin impares: ',lista)
+    suma(lista)
+    MessageBox.showinfo('Suma de los numeros ingresados sin repetir: ',lista)
 
+def duplicados():
+    for listado in lista:
+        if texto not in list:
+            lista.append(int(texto.get()))
 
+def impares():
+    if num%2 == 0:
+        lista.remove(int(num))
 
+def suma(lista):
+    resultadoFinal = 0
+    for i in lista:
+        resultadoFinal = resultadoFinal+i
+        return resultadoFinal
+        lista.insert(0, resultadoFinal)
 #lista
 
 lista = []
