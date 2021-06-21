@@ -1,3 +1,5 @@
+## Primero crear archivo para poder hacer uso de la opcion Leer archivo ##
+
 respuesta = 's'
 
 opcion = input("Que opcion quiere realizar?\n1 - Crear un archivo nuevo\n2 - Abrir y leer un archivo creado\n\n")
