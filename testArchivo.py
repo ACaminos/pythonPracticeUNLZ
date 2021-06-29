@@ -12,29 +12,35 @@ if opcion == '1':
         nombre = input('ingrese nombre:\t')
         apellido = input('ingrese apellido:\t')
         dni = input('ingrese DNI:\t')
-        file.write(dni+','+nombre+','+apellido,'\n')
+        file.write(nombre+','+apellido+','+dni+'\n')
         print('\n')
 
         respuesta=input("Desea agregar un usuario mas?\ts/n\t")
         if respuesta != 's':
             break
     file.close()
-elif opcion == '2':
-    archivo = input(str("\nIngrese el nombre del archivo txt, sin su extension:\t"))
-    openFile = open(archivo+'.txt','r')
-    contenido = openFile.readlines()
-    print('\n\n')
-    busqueda = input(str('Ingrese los 8 numeros del dni a buscar:\t'))
+elif opcion == '2': #Usar Try y except para practicar en este ejercicio#
+    while True:
+        try:
+            archivo = input(str("\nIngrese el nombre del archivo txt, sin su extension:\t"))
+            openFile = open(archivo+'.txt','r')
+            contenido = openFile.readlines()
+            print('\n\n')
+            busqueda = input(str('Ingrese los 8 numeros del dni a buscar:\t'))
 
-    for x in contenido:
-        if busqueda == x[:len(busqueda)]:
-            lista_datos = x
+            for x in contenido:
+                if busqueda == x[:len(busqueda)]:
+                    lista_datos = x
+                    break
+
+            lista_datos = lista_datos.split(sep=',')
+            print('DNI: ',lista_datos[0])
+            print('Nombre: ',lista_datos[1])
+            print('Apellido: ',lista_datos[2])
+            openFile.close()
             break
-
-    lista_datos = lista_datos.split(sep=',')
-    print('DNI: ',lista_datos[0])
-    print('Nombre: ',lista_datos[1])
-    print('Apellido: ',lista_datos[2])
-    openFile.close()
+        except:
+            print("\nArchivo no encontrado, vuelva a ingresar.\n")
+    
 else:
     print('Error')
